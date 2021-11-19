@@ -14,6 +14,12 @@ const AddBookForm: React.FC<Props> = ({ addBook }) => {
     const [price, setPrice] = useState(0);
 
 
+    const resetForm = () => {
+        setTitle('');
+        setAuthor('');
+        setPrice(0);
+    }
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const book: Book = {
@@ -22,11 +28,8 @@ const AddBookForm: React.FC<Props> = ({ addBook }) => {
             author,
             price
         }
-
         addBook(book);
-        console.log(book);
-
-
+        resetForm();
     }
 
     return (
