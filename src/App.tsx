@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import BooksList from './components/BooksList/BooksList'
+import AddBookForm from './components/AddBookForm/AddBookForm'
+import { Book } from './interfaces/Book.interface'
 
-function App() {
+const booksData: Book[] = [
+  {
+    id: 'te1314derw',
+    title: 'Of Mice and Men',
+    author: 'John Steinbeck',
+    price: 25
+  },
+  {
+    id: 't32s14dzdw',
+    title: 'East of Eden',
+    author: 'John Steinbeck',
+    price: 30
+  }
+];
+
+const App: React.FC = () => {
+  const [books, setBooks] = useState(booksData);
+
+  const addBook = (book: Book) => {
+    setBooks([...books, book])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="container">
+      <header>
+        <h1>Books App</h1>
       </header>
+      <BooksList books={books} />
+      <AddBookForm addBook={addBook} />
     </div>
   );
 }
