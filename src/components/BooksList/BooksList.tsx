@@ -5,11 +5,12 @@ import { Book } from './../../interfaces/Book.interface';
 
 interface Props {
     books: Book[];
+    removeBook: (bookId: string) => void;
 }
 
-const BooksList: React.FC<Props> = ({ books }) => {
+const BooksList: React.FC<Props> = ({ books, removeBook }) => {
     return (
-        <ul className="books-list"> {books.map((book: Book) => <BookItem key={book.id} book={book} />)}</ul>
+        <ul className="books-list"> {books.map((book: Book) => <BookItem key={book.id} book={book} removeBook={removeBook} />)}</ul>
     );
 }
 

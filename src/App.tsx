@@ -25,12 +25,16 @@ const App: React.FC = () => {
     setBooks([...books, book])
   }
 
+  const removeBook = (bookId: string) => {
+    setBooks(books.filter((book: Book) => book.id !== bookId));
+  }
+
   return (
     <div className="container">
       <header>
         <h1>Books App</h1>
       </header>
-      <BooksList books={books} />
+      <BooksList books={books} removeBook={removeBook} />
       <AddBookForm addBook={addBook} />
     </div>
   );

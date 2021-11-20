@@ -1,4 +1,40 @@
 .book-item  {
     padding: 1rem;
     border-bottom: 1px dashed rgba(105, 127, 238, 0.25);
+    display: block;
+  position: relative;
+  }
+
+  .canter{
+    display:flex;
+    flex-flow: row;
+  }
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    right: 0%;
+    width: 20px;
+    height: 20px;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    cursor: pointer;
+    position: absolute;
+    display:flex;
+    flex-flow: row;
+    top: 25%;
+    right: 0%;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #fff;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
   }
