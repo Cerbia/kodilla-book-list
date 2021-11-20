@@ -11,7 +11,6 @@ const BooksList: React.FC = () => {
 
     const books = useSelector((state: StoreState) => state.books);
     const dispatch = useDispatch();
-
     const removeBook = (id: string) => dispatch(removeBookAction(id));
 
     return (

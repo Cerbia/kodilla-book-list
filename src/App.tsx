@@ -3,7 +3,6 @@ import BooksList from './components/BooksList/BooksList'
 import AddBookForm from './components/AddBookForm/AddBookForm'
 
 const App: React.FC = () => {
-
   return (
     <div className="container">
       <header>
